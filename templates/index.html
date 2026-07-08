@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+</head>
+<body>
+
+    <h2>Student Management</h2>
+
+    <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <button type="submit">Add Student</button>
+    </form>
+
+    <hr>
+
+    <h3>Students</h3>
+
+    <ul>
+        {% for student in students %}
+            <li>
+                {{ student.name }}
+                <a href="/delete/{{ student.name }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
